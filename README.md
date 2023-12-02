@@ -1,2 +1,1 @@
-# livetime
-just show how many you lived
+replace line.27(date0) with your birthday 
