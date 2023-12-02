@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Time Interval</title>
+</head>
+<body>
+    <div class="">
+
+        <div class="left">
+
+            <h3 id="ms" class="time"> </h3>
+            <h3 id="sec" class="time"> </h3>
+            <h3 id="min" class="time"> </h3>
+            <h3 id="hr" class="time"> </h3>
+            <h3 id="day" class="time"> </h3>
+            <h3 id="yr" class="time"> </h3>
+
+            <hr style="border-color: #1a6a1a; margin-left: 20vw; margin-right: 20vw">
+            <p class="text"> <span style="color: rgb(54, 54, 54);">[snoopy]</span> so... what do you do now, senior? </p>   
+        </div>
+
+    </div>
+
+
+    <script>
+        // Define your date
+        var date0 = new Date("2000-01-01T00:00:00"); // replace it with your bord date
+
+        // Display the result in the specified element
+        var showTime = () => {
+            
+            let now = new Date();
+            let diff = now.getTime() - date0.getTime();
+
+            sec = Math.floor( diff / 1000 )
+            min = Math.floor( sec / 60 )
+            hr = Math.floor( min / 60 )
+            day = Math.floor( hr / 24 )
+            yr = Math.floor( day / 365 )
+
+            // document.getElementById("time").innerHTML = `${hr}:${min}:${sec}`
+            document.getElementById("ms").innerHTML = `${diff} <span style='color:rgb(54, 54, 54)'> ms </span>`;
+            document.getElementById("sec").innerHTML = `${sec} <span style='color:rgb(54, 54, 54)'> s </span>`;
+            document.getElementById("min").innerHTML = `${min} <span style='color:rgb(54, 54, 54)'> min </span>`;
+            document.getElementById("hr").innerHTML = `${hr} <span style='color:rgb(54, 54, 54)'> hr </span>`;
+            document.getElementById("day").innerHTML = `${day} <span style='color:rgb(54, 54, 54)'> day </span>`;
+            document.getElementById("yr").innerHTML = `${yr} <span style='color:rgb(54, 54, 54)'> yr  </span>`;
+        };
+        
+        // (C) START INTERVAL
+        var timer = setInterval(showTime, 100);
+    </script>
+</body>
+</html>
+
+
+<style>
+    body{
+        background-color: #191A19;
+        text-shadow: 0 0 6px rgb(0, 0, 0);
+    }
+
+    @font-face {
+        font-family: fofo;
+        src: url('fofo.ttf');
+    }
+
+    .time{
+        color: rgb(49, 222, 49);
+        font-family: fofo;
+        font-size: 3vw;
+
+        text-shadow: 0 0 15px rgb(0, 0, 0);
+    }
+
+    .text{
+        color: rgb(33, 129, 33);
+        font-family: fofo;
+        font-size: 2vw;
+    }    
+
+    .left{
+        flex-basis: 50%;
+        position: relative;
+
+        text-align: center;
+    }
+
+    .right:after { 
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        height: 50vw;
+        background: rgb(54, 54, 54); /* Change line color here */
+    }
+
+
+
+    .right {
+        padding-left: 20px; /* a bit of space from the line */
+        color: #D8E9A8;
+        font-family: Monospace;
+        font-size: 1.4vw;
+    }
+
+    .mark{
+        color: rgb(33, 129, 33);
+    }
+</style>
