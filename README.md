@@ -1,1 +1,1 @@
-replace line.27(date0) with your birthday 
+replace your birthday instead of line.27(date0)
